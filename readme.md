@@ -14,7 +14,7 @@ While the datasets are very high-quality and usable, keep in mind that different
 
 There is not much info and documentation on data science contests like _Yiedl_ or _Numerai_ , but in terms of profitability one can judge that the contests serve their purpose. For example, Numerai recently [announced](https://forum.numer.ai/t/reducing-numerai-crypto-payouts/7914), that "Numerai Crypto is far more profitable for users than our other 2 tournaments" that they host. To take part in the [Numerai crypto contest](https://crypto.numer.ai/home) one needs to get the data first. Where from? - It is really up to you: you will need to decide which data to use, how to use it, where to collect it, and so on.
 
-Contact me if you need a consultant on data collection, parsing and preparation tasks or if interested in use cases for these particular scripts. 
+Contact me if you need a consultant on machine learning operations (mlops), data collection, parsing and preparation tasks or if interested in use cases for these particular scripts. 
 
 # What is included?
 
