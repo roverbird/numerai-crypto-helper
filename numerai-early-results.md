@@ -35,3 +35,4 @@ Based on that thread, for the **Numerai Crypto Signals Tournament**, here are so
 
 This analysis helps to moderate expectations about early daily scores and underscores the importance of waiting for final results before judging model performance.
 
+_Bottomline: with numerai crypto contest, submit your predictions and forget about them for 30 days._

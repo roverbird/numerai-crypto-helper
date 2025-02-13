@@ -12,38 +12,13 @@ YIEDL provides two versions of its dataset:
 
 While the datasets are very high-quality and usable, keep in mind that different symbols have varying time spans of coverage. Additionally, due to its massive size, managing the dataset can be challenging, requiring custom scripts for effective processing of _parquet_ and _csv_ files. Even despite the obfuscation, the datasets are a valuable asset for building robust prediction models on Numerai. My workflow is to have historic data regularly updated with the latest data files, so that in such way you only need to download the huge historic data file infrequently.
 
-There is not much info and documentation on data science contests like _Yiedl_ or _Numerai_ , but in terms of profitability one can judge that the contests serve their purpose. For example, Numerai recently [announced](https://forum.numer.ai/t/reducing-numerai-crypto-payouts/7914), that "Numerai Crypto is far more profitable for users than our other 2 tournaments" that they host. To take part in the [Numerai crypto contest](https://crypto.numer.ai/home) one needs to get the data first. Where from? - It is really up to you: you will need to decide which data to use, how to use it, where to collect it, and so on.
+There is not much info and documentation on data science contests like _Yiedl_ or _Numerai_ , but in terms of profitability one can judge that the contests serve their purpose. For example, Numerai recently [announced](https://forum.numer.ai/t/reducing-numerai-crypto-payouts/7914), that "Numerai Crypto is far more profitable for users than our other 2 tournaments" that they host. To take part in the [Numerai crypto contest](https://crypto.numer.ai/home) one needs to get the data first. Where from? - It is really up to you: you will need to decide which data to use, how to use it, where to collect it, and so on. Each of these questions requires hours of research.
 
-Contact me if you need a consultant on data collection, parsing and preparation tasks or if interested in use cases for these particular scripts. 
-
-# What is included?
-
-This repository contains unofficial utilities for the Numerai Crypto Signals Contest. Intended to help users interact with the Numerai API for various purposes related to the crypto signals competition only.
-
-## Requirements
-
-To use these utilities, you need to install the `numerapi` package:
-
-```bash
-pip install numerapi
-```
-
-## Scripts
-
-### `round.py`
-
-This script fetches the current round information from the Numerai API. It provides details about the ongoing round, including start and end times, and other relevant information.
-
-### `model.py`
-
-This script fetches information about a specific model by its title. It retrieves various details, including the model ID, latest submission information, stakes, and other relevant metrics.
-
-### `submit.py`
-
-This script automates the submission of crypto signals to [https://crypto.numer.ai/submissions](https://crypto.numer.ai/submissions). It streamlines the process of submitting your signals, making it easier to participate in the Numerai Crypto Tournament.
+Contact me if you need a consultation on data collection, parsing and preparation tasks or if interested in use cases for these particular scripts. 
 
 # Yiedl Extractor
 
+## Overview
 `yiedl-extractor.py` is a script for extracting specific columns from the historical Yiedl dataset. This extracted data is used for the Numerai data contest.
 
 ## Features
@@ -84,7 +59,7 @@ https://api.yiedl.ai/yiedl/v1/downloadDataset?type=historical
 # Yiedl data downloader
 
 ## Overview
-`yiedl-downloader.py`  downloads a dataset for the Yield Data Contest itself (not the Numerai contest). It extracts required values and processes the data based on specific symbols from a validation dataset.
+This script downloads a large dataset for the Yield Data Contest itself (not the Numerai contest), extracts selected target values, and processes the data based on specific symbols from a validation dataset.
 
 ## Features
 - Downloads the dataset from the Yield Data Contest API.
@@ -115,20 +90,9 @@ The script is pre-configured with the following settings:
 - Extracted and filtered data is saved as `output.csv`.
 - Processed data for each symbol meeting the row count threshold is stored in the `processed` directory.
 
-
 ## Notes
-
 - The script automatically removes temporary files and directories after processing.
 - Ensure you have a stable internet connection as the dataset is large.
 
-
-## Disclaimer
-
-This repository is not officially affiliated with Numerai or Yiedl. No liability of any kind. Use and modify these utilities at your own risk, and always refer to the official [Numerai documentation](https://docs.numer.ai/) for the current authoritative information.
-
 The scripts are provided as-is without any warranty, data is used for non-commercial research purposes.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
