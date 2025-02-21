@@ -16,6 +16,10 @@ There is not much info and documentation on data science contests like _Yiedl_ o
 
 Contact me if you need a consultant on machine learning operations (mlops), data collection, parsing and preparation tasks or if interested in use cases for these particular scripts. 
 
+# Related
+
+Check out repo 🔗[Intuitive Trader Game](https://github.com/roverbird/intuitive-trader-game/): gamification of prediction in finance.
+
 # What is included?
 
 This repository contains unofficial utilities for the Numerai Crypto Signals Contest. Intended to help users interact with the Numerai API for various purposes related to the crypto signals competition only.
