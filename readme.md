@@ -46,6 +46,14 @@ This script fetches information about a specific model by its title. It retrieve
 
 This script automates the submission of crypto signals to [https://crypto.numer.ai/submissions](https://crypto.numer.ai/submissions). It streamlines the process of submitting your signals, making it easier to participate in the Numerai Crypto Tournament.
 
+### scrap.py
+
+Unfortunately, Numerai does not currently provide an official documented API to access batch Resolved Rounds data for crypto models. This script is a screen scraping tool that automates downloading and parsing this data from the web interface. We apologize for relying on scraping techniques, which are less reliable and more brittle than an official API. We hope Numerai will add a supported API endpoint for this data in the future to enable easier and more robust access.
+
+`Usage: python script.py model1,model2,model3"`
+
+This will save csv file with resolved rounds statistics for your models.
+
 # Yiedl Extractor
 
 `yiedl-extractor.py` is a script for extracting specific columns from the historical Yiedl dataset. This extracted data is used for the Numerai data contest.
