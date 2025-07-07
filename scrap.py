@@ -5,7 +5,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 
-# requirements: install playwright fist (heavy dependencies!)
+# requirements: install playwright (heavy dependencies!)
 #pip install playwright
 #playwright install
 
@@ -53,14 +53,8 @@ def parse_resolved_rounds(html_path, model_title):
         mmc = clean_text(tds[8])
 
         rows.append({
-            "model_title": model_title,
-            "Round": round_num,
-            "Close": close_date,
-            "Resolve": resolve_date,
-            "Payout": payout,
-            "At-risk": at_risk,
-            "PF": pf,
-            "Multipliers": multipliers,
+            "date": close_date,
+            "model_name": model_title,
             "corr": corr,
             "mmc": mmc,
         })
