@@ -1,8 +1,16 @@
 # What is Yiedl data?
 
-If you're benchmarking financial prediction models on _Numerai_, it is crucial to know about the [community data provided by YIEDL.ai](https://yiedl.ai/competition/datasets).
+_Numerai crypto contest_ is an excellent opportunity for anyone interested in ML, AI trading bots, and finance. If you enjoy mathematics, trading or predictive modeling, it's worth checking out! That said, the learning curve is steep due to the lack of structured documentation and the enigmatic nature of their targets (target is black-box but related to 30-day returns). To remind you, we are trying to predicting the Numerai target but we do not know what it really is. Why do that at all? Because Numerai allows you to benchmark your predictive modelling! It is essentially a live testing system for your financial forecast models, free of charge. Treat it like this instead of a shortcut to profit, and your mental wellbeing will be just fine.
 
-Numerai partnered with YIEDL to bring a comprehensive crypto dataset to Numerai Crypto. This dataset includes over ten years of cryptocurrency data, covering essential features like price volume momentum (PVM), sentiment analysis, and on-chain metrics. Just like the obfuscated data used in the classic Numerai tournament, the YIEDL dataset is encrypted to protect intellectual property while remaining highly useful for model training.
+So, my story. I had been doing some financial modelling before, only as an academic interest in mathematical modelling. However, I was always sceptical about back-testing due to overfitting conciderations. I wanted just that - an _easy, systematic_ way to test my predictions in a live environment. I though, haha, I can piggyback Numerai for that. Yes, fellows, it is possible, but you will have to play the game by their rules -- meaning: predicting THEIR target, not yours.
+
+So my experience with Numerai crypto, unlike I originally expected, started with a lot of frustration: finding data, making sense of the targets, figuring out the best submission workflow was not easy. In the crypto contest, you need to source your own data, and the available historic target data is sporadic (yes, values are not for every single day of the calendar, there are huge gaps for some symbols), which makes the challenge even more difficult. And you actually need to have a very decent DevOps qualification just to run all of the shit every day of the year. If you’re serious about participating, you must decide which data sources to use and you will have to develop custom scripts to process data efficiently.
+
+Initially, for building my own model, I attempted to collect price data using various price APIs (also from Binance, among other sources, where I understood that Binance data from US and EU are different datasets!!!), running a cron job on a VPS to accumulate historical data, store it on my server, and train models on it. Numerai requires at least 100 tradable assets per submission daily. So I quickly figured out that 100 signals per submission weren’t enough, likely due to their strict requirements on non-correlated assets. In practice, a single valid submission typically needs at least 200-300 symbols, meaning daily predictions for that many crypto assets. Again: yes, you must submit at least 200-300 ticker predictions for a single model.
+
+So this is where Yiedl data is useful. It easily meets this requirement, covering hundreds of assets out of the box, and it's a single point of accessing the data. I highly recommend looking into Yiedl data. Numerai partnered with Yiedl.ai to provide high-quality crypto datasets with over ten years of historical observations. While the dataset is obfuscated to protect IP, it's a valuable resource for model training. If you're benchmarking financial prediction models on _Numerai_, it is crucial to know about the [community data provided by YIEDL.ai](https://yiedl.ai/competition/datasets).
+
+> Numerai partnered with YIEDL to bring a comprehensive crypto dataset to Numerai Crypto. This dataset includes over ten years of cryptocurrency data, covering essential features like price volume momentum (PVM), sentiment analysis, and on-chain metrics. Just like the obfuscated data used in the classic Numerai tournament, the YIEDL dataset is encrypted to protect intellectual property while remaining highly useful for model training.
 
 YIEDL provides two versions of its dataset:
 
@@ -10,11 +18,11 @@ YIEDL provides two versions of its dataset:
 
 - Latest Dataset: Covers the most recent month, optimized for quick access
 
-While the datasets are very high-quality and usable, keep in mind that different symbols have varying time spans of coverage. Additionally, due to its massive size, managing the dataset can be challenging, requiring custom scripts for effective processing of _parquet_ and _csv_ files. Even despite the obfuscation, the datasets are a valuable asset for building robust prediction models on Numerai. My workflow is to have historic data regularly updated with the latest data files, so that in such way you only need to download the huge historic data file infrequently.
+While YIEDL datasets are very high-quality and usable, keep in mind that different symbols have varying time spans of coverage. Additionally, due to its massive size, managing the dataset can be challenging, requiring custom scripts for effective processing of _parquet_ and _csv_ files mixed together. However, even despite the obfuscation, the datasets are a valuable asset for building robust prediction models on Numerai. My workflow is to have historic data regularly updated with the latest data files, so that in such way you only need to download the huge historic data file infrequently.
 
-There is not much info and documentation on data science contests like _Yiedl_ or _Numerai_ , but in terms of profitability one can judge that the contests serve their purpose. For example, Numerai recently [announced](https://forum.numer.ai/t/reducing-numerai-crypto-payouts/7914), that "Numerai Crypto is far more profitable for users than our other 2 tournaments" that they host. To take part in the [Numerai crypto contest](https://crypto.numer.ai/home) one needs to get the data first. Where from? - It is really up to you: you will need to decide which data to use, how to use it, where to collect it, and so on.
+There is not much info and documentation on data science contests like _Yiedl_ or _Numerai_ , but in terms of profitability one can judge that the contests serve their purpose. For example, Numerai recently [announced](https://forum.numer.ai/t/reducing-numerai-crypto-payouts/7914), that "Numerai Crypto is far more profitable for users than our other 2 tournaments" that they host. 
 
-Contact me if you need a consultant on machine learning operations (mlops), data collection, parsing and preparation tasks or if interested in use cases for these particular scripts. 
+> To take part in the [Numerai crypto contest](https://crypto.numer.ai/home) one needs to get the data first. Where from? - It is really up to you: you will need to decide which data to use, how to use it, where to collect it, and so on. Contact me if you need a consultant on machine learning operations (mlops) or devops, data collection, parsing and preparation tasks or if interested in use cases for these particular scripts. 
 
 # Related
 
@@ -138,7 +146,7 @@ The script is pre-configured with the following settings:
 
 This repository is not officially affiliated with Numerai or Yiedl. No liability of any kind. Use and modify these utilities at your own risk, and always refer to the official [Numerai documentation](https://docs.numer.ai/) for the current authoritative information.
 
-The scripts are provided as-is without any warranty, data is used for non-commercial research purposes.
+The scripts are provided as-is without any warranty, data is used for non-commercial research purposes only.
 
 ## License
 
