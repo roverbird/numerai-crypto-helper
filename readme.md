@@ -1,3 +1,15 @@
+# Nov 12 2025: Major Changes in Numerai Crypto Tournament
+
+Numerai has [released](https://forum.numer.ai/t/crypto-v2-0-spectra-dataset/8197) the Crypto V2 “Spectra” Dataset, bringing a major overhaul to the crypto tournament workflow. This update introduces a smaller, more curated universe of 300 coins and provides built-in technical analysis features, including moving averages, RSI, momentum, volatility, and Bollinger bands with 20- and 60-day variants.
+
+The targets in historic data have also been updated: participants now have ranked & binned 20-day and 60-day return targets. The live universe does not includes these targets, they exist only in historical training data. Participants must produce a single prediction per symbol for the live universe, which Numerai then scores against both horizons.
+
+The update _fundamentally changes the way the contest is approached_. Unlike the previous V1 setup, users no longer need to source hundreds of altcoins, compute technical indicators, or filter coins by correlation. The workflow is now different: data preparation now focuses on fusing your own signals (for example, from Yiedl) with Numerai’s provided features, aligning to the official universe, and producing a fully enriched dataset for modelling. The modelling pipeline itself can remain largely unchanged, but the pre-processing and feature alignment steps must now follow this new structure to produce valid submissions.
+
+In short, the Crypto contest has become less DIY and more standardized.
+
+---
+
 # What is Yiedl data?
 
 _Numerai crypto contest_ is an excellent opportunity for anyone interested in ML, AI trading bots, and finance. If you enjoy mathematics, trading or predictive modeling, it's worth checking out! That said, the learning curve is steep due to the lack of structured documentation and the enigmatic nature of their targets (target is black-box but related to 30-day returns). To remind you, we are trying to predicting the Numerai target but we do not know what it really is. Why do that at all? Because Numerai allows you to benchmark your predictive modelling! It is essentially a live testing system for your financial forecast models, free of charge. Treat it like this instead of a shortcut to profit, and your mental wellbeing will be just fine.
