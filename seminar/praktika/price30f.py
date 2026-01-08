@@ -33,6 +33,8 @@ daily_close = daily_close.sort_values(by='date').reset_index(drop=True)
 # Calculate the price 30 days into the future using shift()
 daily_close['price_at_close_date'] = daily_close['price'].shift(-30)
 
+# Пояснение: shift с положительным лагом (+k) даёт NaN в начале датасета (head), а shift с отрицательным лагом (-k) даёт NaN в конце (tail)
+
 # Calculate the close date (30 days in the future)
 daily_close['close_date'] = daily_close['date'].shift(-30)
 
